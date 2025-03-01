@@ -17,19 +17,21 @@
 
   <!--Maze grid text input-->
   <div><label>Enter maze grid</label><br>
-    <textarea id="maze-textarea" required>
+    <textarea id="maze-textarea" require
+    placeholder="00000&#10;11000&#10;00000&#10;11001&#10;00111">
     </textarea><br>
     <a class = "error" id = "maze-error"></a></div><br>
 
    <!--Start point text input-->
-  <!-- <div><label>Start point</label><input/></div> -->
+  <div><label>Start point</label><input id = "start-cord" required placeholder="1,3"/><br>
+  <a class = "error" id="start-cord-error"></a></div>
 
-  <!--End point text input-->
-  <!-- <div><label>End point</label><input/></div> -->
-
+  <!-- End point text input-->
+  <div><label>End point</label><input id = "end-cord" required placeholder="4,5"/><br>
+  <a class = "error" id="end-cord-error"></a></div>
 
   <button id="find-path-btn">Find the Path!</button>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 
 </html>
