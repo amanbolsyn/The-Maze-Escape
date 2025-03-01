@@ -1,0 +1,11 @@
+function CheckCordinates(){
+
+
+
+
+
+
+}
+
+
+export {CheckCordinates}
