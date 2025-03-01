@@ -47,6 +47,16 @@ body {
   .cell.end {
     background-color: red;
   }
+
+  #maze-textarea {
+    width: 250px;
+    height: 150px;
+    margin: 10px
+}
+
+.error {
+  color:red;
+}
   
   #start-btn {
     background-color: green;

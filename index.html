@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Maze Escape</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>The Maze Escape</h1>
-    <div class="main-container">
-      <div id="maze-container"></div>
-    </div>
-    <button id="find-path-btn">Find the Path!</button>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Maze Escape</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1>The Maze Escape</h1>
+  <div class="main-container">
+    <div id="maze-container"></div>
+  </div>
+
+
+  <!--Maze grid text input-->
+  <div><label>Enter maze grid</label><br>
+    <textarea id="maze-textarea" required>
+    </textarea><br>
+    <a class = "error" id = "maze-error"></a></div><br>
+
+   <!--Start point text input-->
+  <!-- <div><label>Start point</label><input/></div> -->
+
+  <!--End point text input-->
+  <!-- <div><label>End point</label><input/></div> -->
+
+
+  <button id="find-path-btn">Find the Path!</button>
+  <script src="script.js"></script>
+</body>
+
 </html>
