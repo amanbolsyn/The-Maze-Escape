@@ -1,4 +1,5 @@
 function VisualizeMaze(mazeArray, startPoint, finalPoint) {
+
     const container = document.getElementById("maze-container");
   
     // Clear the previous visualization
@@ -19,6 +20,7 @@ function VisualizeMaze(mazeArray, startPoint, finalPoint) {
             cellDiv.classList.add("path"); // Open path
             break;
           case 1:
+ 
             cellDiv.classList.add("wall"); // Wall
             break;
           case 2:
@@ -45,4 +47,4 @@ function VisualizeMaze(mazeArray, startPoint, finalPoint) {
     });
   }
   
-  export {visualizeMaze}
+  export {VisualizeMaze}
