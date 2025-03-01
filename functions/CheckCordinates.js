@@ -18,10 +18,12 @@ function CheckCordinates(cords, cordError, mazeArr){
     }
 
 
+    console.log(cordsArr)
+
     //checks if cordinates for numbers
     for(let i=0; i<cordsArr.length; i++){
         //returns false if element is not a number
-        if(isNaN(Number(cordsArr[i]))){
+        if(isNaN(Number(cordsArr[i])) || cordsArr[i] === ""){
             cordError.innerHTML = "Error: cordinates have to be anumer"
             return
         }
@@ -37,9 +39,9 @@ function CheckCordinates(cords, cordError, mazeArr){
          cordError.innerHTML = "Error: cordinates doesn't exist"
          return
     }
+    
 
-
-    if(mazeArr[cordsArr[0][cordsArr[1]]] === 1){
+    if(mazeArr[cordsArr[0]][cordsArr[1]]=== 1){
         cordError.innerHTML = "Error: thid cordinates is a wall"
         return
     }

@@ -42,20 +42,19 @@ function CheckMazeGrid() {
         return
     }
 
-    //checks each element to 0 or 1
+//checks each element to 0 or 1
     for (let row = 0; row < maze1DArr.length; row++) {
         for (let col = 0; col < maze1DArr[0].length; col++) {
-            if (maze1DArr[row][col] !== "1" && maze1DArr[row][col] !== "0") {
+            if (maze1DArr[row][col] !== "1" && maze1DArr[row][col] !== "0") { 
                 mazeGridError.innerHTML = "Error: maze grid has to consist of 0's or 1's"
                 return
-            }
+            } 
         }
     }
 
 
     // console.log(maze1DArr)
     let maze2DArr = []
-    
     for (let row = 0; row < maze1DArr.length; row++) {
         maze2DArr[row] = []; //first initalize each row individually
         for (let col = 0; col < maze1DArr[0].length; col++) {
