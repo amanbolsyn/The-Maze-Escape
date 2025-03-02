@@ -9,7 +9,7 @@ function CheckMazeGrid() {
 
     //checks for empry maze grid
     if (mazeStr === "") {
-        mazeGridError.innerHTML = "Error: maze grid cannot be empty"
+        mazeGridError.innerHTML = "Maze grid cannot be empty"
         return
     }
 
@@ -24,7 +24,7 @@ function CheckMazeGrid() {
     //checks if rows are the same size
     for (let i = 0; i < maze1DArr.length; i++) {
         if (maze1DArr[0].length !== maze1DArr[i].length) {
-            mazeGridError.innerHTML = "Error: rows are not the same size"
+            mazeGridError.innerHTML = "Rows are not the same size"
             return
         }
     }
@@ -32,13 +32,13 @@ function CheckMazeGrid() {
 
     //checks maze size. Min:2 Max:45
     if (maze1DArr[0].length < 2 || maze1DArr[0].length > 45) {
-        mazeGridError.innerHTML = "Error: maze can be from 2 to 45 in blocks in size"
+        mazeGridError.innerHTML = "Maze grid can be from 2 to 45 in blocks in size"
         return
     }
 
       //checks maze size. Min:2 Max:45
       if (maze1DArr.length < 2 || maze1DArr.length > 45) {
-        mazeGridError.innerHTML = "Error: maze can be from 2 to 45 in blocks in size"
+        mazeGridError.innerHTML = "Maze grid can be from 2 to 45 in blocks in size"
         return
     }
 
@@ -46,7 +46,7 @@ function CheckMazeGrid() {
     for (let row = 0; row < maze1DArr.length; row++) {
         for (let col = 0; col < maze1DArr[0].length; col++) {
             if (maze1DArr[row][col] !== "1" && maze1DArr[row][col] !== "0") { 
-                mazeGridError.innerHTML = "Error: maze grid has to consist of 0's or 1's"
+                mazeGridError.innerHTML = "Maze grid has to consist of 0's or 1's"
                 return
             } 
         }

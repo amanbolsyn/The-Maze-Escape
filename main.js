@@ -2,10 +2,7 @@ import { CheckMazeGrid } from "./functions/CheckMazeGrid.js"
 import { CheckCordinates } from "./functions/CheckCordinates.js";
 import { PathFinding } from "./functions/PathFinding.js"
 
-
-const startBtn = document.getElementById("find-path-btn");
-
-
+const startBtn = document.getElementById("start-bttn");
 
 startBtn.addEventListener("click", async () => {
   // call visualizeMaze function here with your solution
@@ -28,8 +25,8 @@ startBtn.addEventListener("click", async () => {
 
   //checks if entered two cordinates are the same and displays an error 
   if (startArr[0] === endArr[0] && startArr[1] === endArr[1]) {
-    startArr.innerHTML = "Error: conrinates cannot be the same"
-    endCorErr.innerHTML = "Error: cordinates cannot be the same"
+    startArr.innerHTML = "Coordinates cannot be the same"
+    endCorErr.innerHTML = "Coordinates cannot be the same"
     return
   }
 
@@ -53,7 +50,7 @@ startBtn.addEventListener("click", async () => {
     }
 
     if (!isSolved) {
-      mazeResults.innerHTML = "Maze is not solvable"
+      mazeResults.innerHTML = "Maze cannot be solved"
     }
   }
 });

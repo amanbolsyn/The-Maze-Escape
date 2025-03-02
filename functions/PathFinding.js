@@ -58,13 +58,13 @@ async function PathFinding(mazeArr, startCord, endCord) {
                         //console.log("Currecnt parent cell", adjx , adjy)
                     }
 
-                    await sleep(500)
+                    await sleep(0)
                     VisualizeMaze(mazeArr, startCord, endCord)
 
                     return
                 }
 
-                await sleep(500)
+                await sleep(0)
                 VisualizeMaze(mazeArr, startCord, endCord)
             }
         }

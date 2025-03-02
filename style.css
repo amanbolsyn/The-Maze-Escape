@@ -1,12 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: "Lucida Console", "Courier New", monospace;
     text-align: center;
   }
   
-  h1 {
+  h1, h2 {
     color: green;
   }
   
+
   .main-container {
     display: flex;
   }
@@ -16,6 +17,37 @@ body {
     gap: 1px;
     margin: 20px auto;
     border: 2px solid #333;
+  }
+
+  #maze-textarea {
+    width: 500px;
+    height: 200px;
+    margin: 10px;
+    font-size: 15px;
+    border-radius: 2px;
+    border:1px, solid;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.error{
+  color:red;
+  font-weight:bold;
+}
+
+  label {
+     color: green;
+     font-size: 25px; 
+    
+  }
+
+  input{
+    height: 30px;
+     width: 160px;
+     font-size: 15px;
+     border-radius: 2px;
+     border:1px, solid;
+     cursor: pointer;
   }
   
   .cell {
@@ -47,18 +79,8 @@ body {
   .cell.end {
     background-color: red;
   }
-
-  #maze-textarea {
-    width: 500px;
-    height: 500px;
-    margin: 10px
-}
-
-.error {
-  color:red
-}
   
-  #start-btn {
+  #start-bttn {
     background-color: green;
     color: #ffffff;
     padding: 10px 20px;
@@ -72,12 +94,12 @@ body {
   }
   
   /* Hover effect */
-  #start-btn:hover {
+  #start-bttn:hover {
     background-color: #29b94d;
   }
   
   /* Active effect (when clicking) */
-  #start-btn:active {
+  #start-bttn:active {
     transform: scale(0.98);
     background-color: #4fce6f;
   }
