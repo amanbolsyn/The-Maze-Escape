@@ -3,8 +3,10 @@ import { CheckCordinates } from "./functions/CheckCordinates.js";
 import { PathFinding } from "./functions/PathFinding.js"
 
 const startBtn = document.getElementById("start-bttn");
+const  ab = document.getElementById("ab")
 
 startBtn.addEventListener("click", async () => {
+  
   // call visualizeMaze function here with your solution
   const mazeResults = document.getElementById("result");
   mazeResults.innerHTML = ""
@@ -34,22 +36,20 @@ startBtn.addEventListener("click", async () => {
   if (mazeArr !== undefined && startArr !== undefined && endArr !== undefined) {
 
    await PathFinding(mazeArr, startArr, endArr);//BFS algorithm to find shortest path from point A to point B
-      
-   console.log(mazeArr)
  
     let isSolved = false
 
     for (let row = 0; row < mazeArr.length; row++) {
       for (let col = 0; col < mazeArr[row].length; col++) {
         if (mazeArr[row][col] === 3) {
-          mazeResults.innerHTML = "Maze is solved"
           isSolved = true
-          break;
         }
       }
     }
 
-    if (!isSolved) {
+    if (isSolved) {
+      mazeResults.innerHTML = "Maze is solved"
+    } else {
       mazeResults.innerHTML = "Maze cannot be solved"
     }
   }

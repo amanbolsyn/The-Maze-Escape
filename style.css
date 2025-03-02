@@ -35,6 +35,12 @@ body {
   font-weight:bold;
 }
 
+#result{
+  font-size:35px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(2, 54, 2);
+}
+
   label {
      color: green;
      font-size: 25px; 
