@@ -14,6 +14,7 @@ startBtn.addEventListener("click", () => {
     //checking entered maze
     let mazeArr = CheckMazeGrid()
 
+
     let startStr = document.getElementById("start-cord").value.trim();
     let startCordErr = document.getElementById("start-cord-error");
     let startArr = CheckCordinates(startStr, startCordErr, mazeArr)
@@ -29,12 +30,31 @@ startBtn.addEventListener("click", () => {
       return
     }
   
+  
 
     //main logic
     if(mazeArr !== undefined && startArr !== undefined && endArr !== undefined){
       VisualizeMaze(mazeArr, startArr, endArr);
       PathFinding(mazeArr, startArr, endArr);//BFS algorithm to find shortest path from point A to point B
-     console.log(mazeArr)
-     VisualizeMaze(mazeArr, startArr, endArr)
+      VisualizeMaze(mazeArr, startArr, endArr)
+
+      const mazeResults = document.getElementById("result");
+      let isSolved = false
+
+      for(let row =0; row<mazeArr.length; row++){
+        for(let col = 0; col<mazeArr[row].length; col++){
+          if(mazeArr[row][col] === 3){
+           mazeResults.innerHTML = "Maze is solved"
+           isSolved = true
+           break;
+          }
+        }
+      }
+
+      if(!isSolved){
+        mazeResults.innerHTML = "Maze is not solvable"
+      }
+
+
     }
 });
