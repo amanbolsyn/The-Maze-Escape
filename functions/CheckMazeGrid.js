@@ -20,12 +20,6 @@ function CheckMazeGrid() {
         maze1DArr[i] = maze1DArr[i].trimEnd()
     }
 
-    //hecks if columns and rows are the same size
-    if (maze1DArr.length !== maze1DArr[0].length) {
-        mazeGridError.innerHTML = "Error: columns and rows are not the same size"
-        return
-    }
-
 
     //checks if rows are the same size
     for (let i = 0; i < maze1DArr.length; i++) {
