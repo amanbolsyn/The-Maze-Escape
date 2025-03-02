@@ -35,7 +35,7 @@ function CheckCordinates(cords, cordError, mazeArr){
     }
       
     //checks if cordinates which are indexes exist in actual maze array
-    if(!(cordsArr[0]>=0 && cordsArr[0]< mazeArr[1].length && cordsArr[1] >=0 && cordsArr[1] < mazeArr[1].length)){
+    if(!(cordsArr[0]>=0 &&  cordsArr[1] >=0 && (( cordsArr[0]< mazeArr[1].length && cordsArr[1] < mazeArr[1].length) || (cordsArr[0] < mazeArr.length  && cordsArr[1] < mazeArr.length )))){
          cordError.innerHTML = "Error: cordinates doesn't exist"
          return
     }
