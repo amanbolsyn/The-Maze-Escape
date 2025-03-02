@@ -30,9 +30,15 @@ function CheckMazeGrid() {
     }
 
 
-    //checks maze size. Min:2 Max:15
-    if (maze1DArr[0].length < 2 || maze1DArr[0].length > 15) {
-        mazeGridError.innerHTML = "Error: maze can be from 2 to 15 in blocks in size"
+    //checks maze size. Min:2 Max:45
+    if (maze1DArr[0].length < 2 || maze1DArr[0].length > 45) {
+        mazeGridError.innerHTML = "Error: maze can be from 2 to 45 in blocks in size"
+        return
+    }
+
+      //checks maze size. Min:2 Max:45
+      if (maze1DArr.length < 2 || maze1DArr.length > 45) {
+        mazeGridError.innerHTML = "Error: maze can be from 2 to 45 in blocks in size"
         return
     }
 
@@ -49,6 +55,7 @@ function CheckMazeGrid() {
 
     // console.log(maze1DArr)
     let maze2DArr = []
+
     for (let row = 0; row < maze1DArr.length; row++) {
         maze2DArr[row] = []; //first initalize each row individually
         for (let col = 0; col < maze1DArr[0].length; col++) {
