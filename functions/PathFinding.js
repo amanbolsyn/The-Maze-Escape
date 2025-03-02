@@ -4,6 +4,8 @@ function PathFinding(mazeArr, startCord, endCord) {
     var dRow = [-1, 0, 1, 0];
     var dCol = [0, 1, 0, -1];
 
+    let prevCell = new Map()
+
     function isValid(row, col, mazeArr) {
 
         //checks current cell indexis 
@@ -36,7 +38,7 @@ function PathFinding(mazeArr, startCord, endCord) {
         var currentCell = que[0];
         var x = currentCell[0];
         var y = currentCell[1];
-        console.log(currentCell)
+        //console.log(currentCell)
 
         que.shift();
 
@@ -48,9 +50,27 @@ function PathFinding(mazeArr, startCord, endCord) {
 
             if (isValid(adjx, adjy, mazeArr)) {
                 que.push([adjx, adjy]);
+                prevCell.set(`${adjx},${adjy}`, currentCell)
                 mazeArr[adjx][adjy] = 2;
-
+                 
+                //if endpoint is found exit the function
                 if(endCord[0] === adjx && endCord[1] === adjy){
+                   console.log(prevCell)
+
+                    adjx = endCord[0]
+                    adjy = endCord[1]
+                    
+                     while(adjx !== startCord[0] || adjy !== startCord[1]){
+
+                         mazeArr[adjx][adjy] = 3;
+                         console.log(mazeArr)
+                         let parentCell =  prevCell.get(`${adjx},${adjy}`)
+                         adjx = parentCell[0]
+                         adjy = parentCell[1]
+
+                         console.log("Currecnt parent cell", adjx , adjy)
+                     }
+
                     return
                 }
             }
