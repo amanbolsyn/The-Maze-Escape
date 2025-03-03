@@ -59,9 +59,7 @@ startBttn.addEventListener("click", async () => {
       mazeResults.innerHTML = "Maze cannot be solved"
     }
   }
-
-  console.log("HERE")
-
+  
   startBttn.disabled = false;
 });
 

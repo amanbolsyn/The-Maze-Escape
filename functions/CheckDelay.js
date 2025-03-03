@@ -31,7 +31,6 @@ function CheckDelay() {
         return delayNum = 0;
     }
   
-
     return delayNum;
 }
 

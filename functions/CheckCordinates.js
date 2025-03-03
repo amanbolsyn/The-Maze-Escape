@@ -33,7 +33,7 @@ function CheckCordinates(cords, cordError, mazeArr){
     }
       
     //checks if coordinates exist within the maze
-    if(cordsArr[0]<0 &&  cordsArr[1] <0){
+    if(cordsArr[0]<0 ||  cordsArr[1] <0){
          cordError.innerHTML = "This coordinates does not exist within the maze"
          return
     }
@@ -49,6 +49,8 @@ function CheckCordinates(cords, cordError, mazeArr){
         cordError.innerHTML = "This coordinates does not exist within the maze"
         return
     }
+
+    console.log(cordsArr)
 
     //checks if coordinates is a wall 
     if(mazeArr[cordsArr[0]][cordsArr[1]]=== 1){
