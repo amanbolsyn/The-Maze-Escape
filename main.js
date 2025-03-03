@@ -1,5 +1,5 @@
 import { CheckMazeGrid } from "./functions/CheckMazeGrid.js"
-import { CheckCordinates } from "./functions/CheckCordinates.js";
+import { CheckCoordinates } from "./functions/CheckCoordinates.js";
 import { PathFinding } from "./functions/PathFinding.js"
 
 const startBttn = document.getElementById("start-bttn");
@@ -24,8 +24,8 @@ startBttn.addEventListener("click", async () => {
   let endCordErr = document.getElementById("end-cord-error")
 
   if (mazeArr !== undefined) {
-    startArr = CheckCordinates(startStr, startCordErr, mazeArr)
-    endArr = CheckCordinates(endstr, endCordErr, mazeArr)
+    startArr = CheckCoordinates(startStr, startCordErr, mazeArr)
+    endArr = CheckCoordinates(endstr, endCordErr, mazeArr)
   }
 
   //main logic
@@ -59,7 +59,7 @@ startBttn.addEventListener("click", async () => {
       mazeResults.innerHTML = "Maze cannot be solved"
     }
   }
-  
+
   startBttn.disabled = false;
 });
 

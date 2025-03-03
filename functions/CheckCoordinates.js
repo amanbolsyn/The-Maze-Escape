@@ -1,4 +1,4 @@
-function CheckCordinates(cords, cordError, mazeArr){
+function CheckCoordinates(cords, cordError, mazeArr){
 
     cordError.innerHTML = ""
    
@@ -39,18 +39,20 @@ function CheckCordinates(cords, cordError, mazeArr){
     }
 
      //checks if coordinates exist within the maze
-    if( cordsArr[0] > mazeArr[1].length && cordsArr[0] > mazeArr[1].length){
+    if( cordsArr[0] > mazeArr.length){
         cordError.innerHTML = "This coordinates does not exist within the maze"
+        console.log("DJKLF")
         return
     }
 
     //checks if coordinates exist within the maze
-    if(cordsArr[1] > mazeArr.length  && cordsArr[1] > mazeArr.length ){
+    if(cordsArr[1] > mazeArr[0].length ){
         cordError.innerHTML = "This coordinates does not exist within the maze"
         return
     }
 
-    console.log(cordsArr)
+    // console.log(cordsArr)
+    // console.log(mazeArr)
 
     //checks if coordinates is a wall 
     if(mazeArr[cordsArr[0]][cordsArr[1]]=== 1){
@@ -63,4 +65,4 @@ function CheckCordinates(cords, cordError, mazeArr){
 }
 
 
-export {CheckCordinates}
+export {CheckCoordinates}
