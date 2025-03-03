@@ -1,7 +1,10 @@
 import { VisualizeMaze } from "./VisualzeMaze.js";
+import {CheckDelay} from "./CheckDelay.js"
 
 //implemented BFS method to find the shortest between two coordinates
 async function PathFinding(mazeArr, startCord, endCord) {
+ 
+    let delay = CheckDelay();
 
     // Direction vectors: up, right, down, left
     var dRow = [-1, 0, 1, 0];
@@ -28,7 +31,6 @@ async function PathFinding(mazeArr, startCord, endCord) {
         var currentCell = que[0]
         var x = currentCell[0];
         var y = currentCell[1];
-        //console.log(currentCell)
 
         que.shift();//removes first element from the queue 
 
@@ -57,24 +59,23 @@ async function PathFinding(mazeArr, startCord, endCord) {
                     //traversing back from end coordinates to starting coordinates to display shortest path beetwen them
                     while (adjx !== startCord[0] || adjy !== startCord[1]) {
 
-                        // await sleep(500)
+                        await sleep(delay)
                         VisualizeMaze(mazeArr, startCord, endCord)
 
                         mazeArr[adjx][adjy] = 3;
-                        //console.log(mazeArr)
                         let parentCell = prevCell.get(`${adjx},${adjy}`)
                         adjx = parentCell[0]
                         adjy = parentCell[1]
 
                     }
 
-                    // await sleep(0)
+                    await sleep(delay)
                     VisualizeMaze(mazeArr, startCord, endCord)
 
                     return
                 }
 
-                // await sleep(0)
+                await sleep(delay)
                 VisualizeMaze(mazeArr, startCord, endCord)
             }
         }
@@ -84,9 +85,9 @@ async function PathFinding(mazeArr, startCord, endCord) {
 }
 
 
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 //checks if current cell is valid to visit
 function isValid(row, col, mazeArr) {

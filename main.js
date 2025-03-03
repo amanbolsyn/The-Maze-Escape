@@ -2,10 +2,11 @@ import { CheckMazeGrid } from "./functions/CheckMazeGrid.js"
 import { CheckCordinates } from "./functions/CheckCordinates.js";
 import { PathFinding } from "./functions/PathFinding.js"
 
-const startBtn = document.getElementById("start-bttn");
+const startBttn = document.getElementById("start-bttn");
 
-startBtn.addEventListener("click", async () => {
+startBttn.addEventListener("click", async () => {
 
+  startBttn.disabled = true;
   // call visualizeMaze function here with your solution
   const mazeResults = document.getElementById("result");
   mazeResults.innerHTML = ""
@@ -54,5 +55,7 @@ startBtn.addEventListener("click", async () => {
       mazeResults.innerHTML = "Maze cannot be solved"
     }
   }
+
+  startBttn.disabled = false;
 });
 
