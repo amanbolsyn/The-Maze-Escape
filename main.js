@@ -17,27 +17,31 @@ startBttn.addEventListener("click", async () => {
   //checking starting coordinates
   let startStr = document.getElementById("start-cord").value.trim();
   let startCordErr = document.getElementById("start-cord-error");
-  let startArr = CheckCordinates(startStr, startCordErr, mazeArr)
+  let startArr, endArr
 
   //checking ending coordinates
   const endstr = document.getElementById("end-cord").value.trim()
-  let endCorErr = document.getElementById("end-cord-error")
-  let endArr = CheckCordinates(endstr, endCorErr, mazeArr)
+  let endCordErr = document.getElementById("end-cord-error")
 
-
-  //checks if entered two coordinates are the same and displays an error 
-  if (startArr[0] === endArr[0] && startArr[1] === endArr[1]) {
-    startArr.innerHTML = "Coordinates cannot be the same"
-    endCorErr.innerHTML = "Coordinates cannot be the same"
-    return
+  if (mazeArr !== undefined) {
+    startArr = CheckCordinates(startStr, startCordErr, mazeArr)
+    endArr = CheckCordinates(endstr, endCordErr, mazeArr)
   }
 
   //main logic
   if (mazeArr !== undefined && startArr !== undefined && endArr !== undefined) {
 
-   await PathFinding(mazeArr, startArr, endArr);//BFS algorithm to find shortest path from point A to point B
- 
-   //checks weather the maze is solved or not
+    //checks if entered two coordinates are the same and displays an error 
+    if (startArr[0] === endArr[0] && startArr[1] === endArr[1]) {
+      startCordErr.innerHTML = "Coordinates cannot be the same"
+      endCordErr.innerHTML = "Coordinates cannot be the same"
+      startBttn.disabled = false;
+      return
+    }
+
+    await PathFinding(mazeArr, startArr, endArr);//BFS algorithm to find shortest path from point A to point B
+
+    //checks weather the maze is solved or not
     let isSolved = false
 
     for (let row = 0; row < mazeArr.length; row++) {
@@ -55,6 +59,8 @@ startBttn.addEventListener("click", async () => {
       mazeResults.innerHTML = "Maze cannot be solved"
     }
   }
+
+  console.log("HERE")
 
   startBttn.disabled = false;
 });
