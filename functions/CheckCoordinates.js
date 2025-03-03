@@ -39,14 +39,13 @@ function CheckCoordinates(cords, cordError, mazeArr){
     }
 
      //checks if coordinates exist within the maze
-    if( cordsArr[0] > mazeArr.length){
+    if( cordsArr[0] >= mazeArr.length){
         cordError.innerHTML = "This coordinates does not exist within the maze"
-        console.log("DJKLF")
         return
     }
 
     //checks if coordinates exist within the maze
-    if(cordsArr[1] > mazeArr[0].length ){
+    if(cordsArr[1] >= mazeArr[0].length ){
         cordError.innerHTML = "This coordinates does not exist within the maze"
         return
     }

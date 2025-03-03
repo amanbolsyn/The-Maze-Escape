@@ -31,13 +31,13 @@ function CheckMazeGrid() {
 
     //checks maze size. Min:2 Max:45
     if (maze1DArr[0].length < 2 || maze1DArr[0].length > 45) {
-        mazeGridError.innerHTML = "Maze grid can be from 2 to 45 in blocks in size"
+        mazeGridError.innerHTML = "Maze grid can be from 2 to 40 in blocks in size"
         return
     }
 
       //checks maze size. Min:2 Max:45
       if (maze1DArr.length < 2 || maze1DArr.length > 45) {
-        mazeGridError.innerHTML = "Maze grid can be from 2 to 45 in blocks in size"
+        mazeGridError.innerHTML = "Maze grid can be from 2 to 40 in blocks in size"
         return
     }
 
